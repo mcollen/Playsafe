@@ -2,7 +2,7 @@ package com.playsafe.conversions;
 
 public class ktomImpl implements ktom{
 	
-	public double toMiles(double miles) {
-		return (miles * 1.60934);
+	public double toMiles(double km) {
+		return (km / 1.60934);
 	}
 }
