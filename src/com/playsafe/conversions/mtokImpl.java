@@ -1,8 +1,11 @@
 package com.playsafe.conversions;
 
-public class mtokImpl implements ktom{
+import javax.jws.WebService;
+
+@WebService(targetNamespace = "http://conversions.playsafe.com/", endpointInterface = "com.playsafe.conversions.mtok", portName = "mtokImplPort", serviceName = "mtokImplService")
+public class mtokImpl implements mtok{
 	
-	public double toMiles(double miles) {
+	public double toKilometre(double miles) {
 		return (miles * 1.60934);
 	}
 }
