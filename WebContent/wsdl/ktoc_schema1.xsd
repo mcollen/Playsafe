@@ -1,0 +1,19 @@
+<xs:schema xmlns:tns="http://conversions.playsafe.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://conversions.playsafe.com/" version="1.0">
+
+  <xs:element name="toCelsius" type="tns:toCelsius"/>
+
+  <xs:element name="toCelsiusResponse" type="tns:toCelsiusResponse"/>
+
+  <xs:complexType name="toCelsius">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="toCelsiusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

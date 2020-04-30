@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ktocService" targetNamespace="http://conversions.playsafe.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://conversions.playsafe.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://conversions.playsafe.com/" schemaLocation="ktoc_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="toCelsiusResponse">
+    <wsdl:part name="parameters" element="tns:toCelsiusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="toCelsius">
+    <wsdl:part name="parameters" element="tns:toCelsius">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ktoc">
+    <wsdl:operation name="toCelsius">
+      <wsdl:input name="toCelsius" message="tns:toCelsius">
+    </wsdl:input>
+      <wsdl:output name="toCelsiusResponse" message="tns:toCelsiusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ktocServiceSoapBinding" type="tns:ktoc">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="toCelsius">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="toCelsius">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="toCelsiusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ktocService">
+    <wsdl:port name="ktocPort" binding="tns:ktocServiceSoapBinding">
+      <soap:address location="http://localhost:9090/ktocPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
